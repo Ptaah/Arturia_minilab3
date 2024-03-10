@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArdourMIDIBindings version="1.0.0" name="Arturia MiniLab 3">
+<!-- 2024-03-09 Aurélien Cedeyn: Arturia MiniLab 3 Map file -->
+
+  <DeviceInfo bank-size="4"/>
+
+  <!-- The 4 transport PADs (Loop/Stop/Play/Rec) -->
+  <Binding channel="1" ctl="105" function="loop-toggle"/>
+  <Binding channel="1" ctl="106" function="transport-stop"/>
+  <Binding channel="1" ctl="107" function="transport-roll"/>
+  <Binding channel="1" ctl="108" function="toggle-rec-enable"/>
+
+  <!-- Main Knob -->
+  <Binding msg="B0 72 41" action="Editor/select-next-route"/>
+  <Binding msg="B0 72 42" action="Editor/select-next-route"/>
+  <Binding msg="B0 72 3E" action="Editor/select-prev-route"/>
+  <Binding msg="B0 72 3D" action="Editor/select-prev-route"/>
+  <!-- Pushing the main Knob -->
+  <Binding channel="1" ctl="115"  uri="/route/recenable S1"/>
+
+  <!-- Knob 1 to 8
+    Raw MIDI messages from Knobs 1 to 8
+    B0 4A 21
+    B0 47 03
+    B0 4C 72
+    B0 4D 38
+    B0 5D 7F
+    B0 12 52
+    B0 13 2C
+    B0 10 59
+  -->
+  <Binding channel="1" ctl="74" uri="/route/plugin/parameter S1 1 1"/>
+  <Binding channel="1" ctl="71" uri="/route/plugin/parameter S1 1 2"/>
+  <Binding channel="1" ctl="76" uri="/route/plugin/parameter S1 1 3"/>
+  <Binding channel="1" ctl="77" uri="/route/plugin/parameter S1 1 4"/>
+  <Binding channel="1" ctl="93" uri="/route/plugin/parameter S1 1 5"/>
+  <Binding channel="1" ctl="18" uri="/route/plugin/parameter S1 1 6"/>
+  <Binding channel="1" ctl="19" uri="/route/plugin/parameter S1 1 7"/>
+  <Binding channel="1" ctl="16" uri="/route/plugin/parameter S1 1 8"/>
+
+  <!-- Faders 1 to 4 -->
+  <Binding channel="1" ctl="52" uri="/route/gain B1"/>
+  <Binding channel="1" ctl="53" uri="/route/gain B2"/>
+  <Binding channel="1" ctl="55" uri="/route/gain B3"/>
+  <Binding channel="1" ctl="11" uri="/route/gain B4"/>
+
+</ArdourMIDIBindings>
